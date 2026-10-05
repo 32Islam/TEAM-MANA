@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f1223e"/>
+      <stop offset="50%" stop-color="#f51636"/>
+      <stop offset="100%" stop-color="#d60927"/>
+    </linearGradient>
+
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00a0ff"/>
+      <stop offset="50%" stop-color="#0086e3"/>
+      <stop offset="100%" stop-color="#006ec4"/>
+    </linearGradient>
+
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d2d7df"/>
+      <stop offset="50%" stop-color="#b8bec8"/>
+      <stop offset="100%" stop-color="#9da4af"/>
+    </linearGradient>
+
+    <linearGradient id="bottomSilverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c5cbd4"/>
+      <stop offset="60%" stop-color="#adb4bf"/>
+      <stop offset="100%" stop-color="#8a929f"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filters -->
+    <filter id="esportsGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .esports-font-condensed {
+      font-family: 'Rajdhani', 'Teko', 'Impact', 'Arial Black', sans-serif;
+      font-weight: 900;
+      text-anchor: middle;
+      letter-spacing: 0.04em;
+    }
+  </style>
+
+  <!-- ================= TOP: VIRTUOCITY (ARCHED DOWNWARDS) ================= -->
+  <g id="virtuocity-top">
+    <!-- Curved Path for VIRTUOCITY -->
+    <path id="virtuocityPath" d="M 180 82 Q 500 102 820 82" fill="none" stroke="none" />
+    <text fill="url(#silverGrad)">
+      <textPath href="#virtuocityPath" startOffset="50%" text-anchor="middle" font-family="'Rajdhani', 'Arial Black', sans-serif" font-weight="900" font-size="78" letter-spacing="0.14em">
+        VIRTUOCITY
+      </textPath>
+    </text>
+  </g>
+
+  <!-- ================= MIDDLE: BATTLE (RED) ================= -->
+  <g id="battle-red" fill="url(#redGrad)">
+    <!-- B -->
+    <path d="M 0 57 L 68 70 L 68 152 L 48 166 L 68 180 L 68 318 L 48 350 L 0 350 Z M 27 101 L 27 186 L 43 186 L 43 105 Z M 27 222 L 27 308 L 43 308 L 43 222 Z" />
+    
+    <!-- A -->
+    <path d="M 82 73 L 152 83 L 152 336 L 125 336 L 125 240 L 109 240 L 109 336 L 82 336 Z M 109 119 L 109 198 L 125 198 L 125 122 Z" />
+
+    <!-- T (1) -->
+    <path d="M 166 85 L 253 96 L 253 148 L 223 148 L 223 325 L 196 325 L 196 148 L 166 148 Z" />
+
+    <!-- T (2) -->
+    <path d="M 267 98 L 354 107 L 354 158 L 324 158 L 324 314 L 297 314 L 297 158 L 267 158 Z" />
+
+    <!-- L -->
+    <path d="M 368 109 L 395 112 L 395 264 L 442 264 L 442 304 L 388 304 L 368 284 Z" />
+
+    <!-- E -->
+    <path d="M 456 119 L 500 123 L 500 167 L 483 167 L 498 198 L 498 238 L 483 238 L 500 256 L 500 297 L 456 297 Z M 483 148 L 483 138 L 483 148 Z" />
+  </g>
+
+  <!-- ================= MIDDLE: GROUND (BLUE) ================= -->
+  <g id="ground-blue" fill="url(#blueGrad)">
+    <!-- G -->
+    <path d="M 515 125 L 585 119 L 585 163 L 558 163 L 558 253 L 585 253 L 585 208 L 565 208 L 565 186 L 610 186 L 610 297 L 540 297 L 515 272 Z" />
+
+    <!-- R -->
+    <path d="M 624 116 L 696 107 L 696 208 L 678 220 L 710 308 L 681 308 L 655 236 L 651 236 L 651 308 L 624 308 Z M 651 148 L 651 198 L 669 198 L 669 148 Z" />
+
+    <!-- O -->
+    <path d="M 724 103 L 811 93 L 811 320 L 724 320 Z M 751 142 L 751 278 L 784 278 L 784 142 Z" />
+
+    <!-- U -->
+    <path d="M 825 91 L 852 88 L 852 270 L 880 270 L 880 84 L 907 81 L 907 285 L 870 329 L 825 329 Z" />
+
+    <!-- N -->
+    <path d="M 921 79 L 948 76 L 977 242 L 977 73 L 1000 70 L 1000 340 L 973 340 L 944 174 L 944 340 L 921 340 Z" />
+
+    <!-- D (Integrated end contour) -->
+    <path d="M 930 63 L 975 58 Q 1000 68 1000 115 L 1000 295 Q 1000 342 975 352 L 930 352 Z M 957 100 L 957 310 L 973 310 Q 982 300 982 205 Q 982 110 973 100 Z" opacity="0.1" />
+  </g>
+
+  <!-- Precise Vector Fallback Text Layer for Ultra Sharp Rendering -->
+  <g id="middle-text-precise" class="esports-font-condensed" transform="scale(1, 1.45)">
+    <!-- BATTLE in Red -->
+    <text x="245" y="195" font-size="168" fill="url(#redGrad)" letter-spacing="-0.02em" transform="rotate(-3, 245, 195)">
+      BATTLE
+    </text>
+    <!-- GROUND in Blue -->
+    <text x="755" y="195" font-size="168" fill="url(#blueGrad)" letter-spacing="-0.02em" transform="rotate(3, 755, 195)">
+      GROUND
+    </text>
+  </g>
+
+  <!-- ================= BOTTOM: QATAR 2026 (ARCHED UPWARDS) ================= -->
+  <g id="qatar-bottom">
+    <path id="qatarPath" d="M 220 405 Q 500 375 780 405" fill="none" stroke="none" />
+    <text fill="url(#bottomSilverGrad)">
+      <textPath href="#qatarPath" startOffset="50%" text-anchor="middle" font-family="'Rajdhani', 'Arial Black', sans-serif" font-weight="900" font-size="82" letter-spacing="0.12em">
+        QATAR 2026
+      </textPath>
+    </text>
+  </g>
+</svg>
