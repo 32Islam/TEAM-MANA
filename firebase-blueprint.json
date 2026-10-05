@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "Tournament": {
+      "title": "Tournament",
+      "description": "Represents a tournament configuration, metadata, and state.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the tournament"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the tournament"
+        },
+        "config": {
+          "type": "object",
+          "description": "Full tournament configuration settings"
+        },
+        "updatedAt": {
+          "type": "number",
+          "description": "Epoch timestamp of last update"
+        }
+      },
+      "required": ["id", "name", "updatedAt"]
+    },
+    "SavedMatch": {
+      "title": "SavedMatch",
+      "description": "Record of a completed tournament match.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the match"
+        },
+        "matchNumber": {
+          "type": "number",
+          "description": "Sequential match number in the tournament"
+        },
+        "mapName": {
+          "type": "string",
+          "description": "Map name e.g. Erangel, Miramar"
+        },
+        "timestamp": {
+          "type": "number",
+          "description": "Unix timestamp when match was saved"
+        },
+        "teamScores": {
+          "type": "object",
+          "description": "Team match scores map keyed by teamId"
+        }
+      },
+      "required": ["id", "matchNumber", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/tournaments/{tournamentId}": {
+      "schema": "Tournament",
+      "description": "Main tournament document storing settings and state"
+    },
+    "/tournaments/{tournamentId}/matches/{matchId}": {
+      "schema": "SavedMatch",
+      "description": "Individual tournament match scores and results"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Validation helper for document IDs
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 64;
+    }
+
+    // Connection validation document
+    match /test/connection {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Tournament configuration and live state
+    match /tournaments/{tournamentId} {
+      allow read: if isValidId(tournamentId);
+      allow write: if isValidId(tournamentId);
+
+      // Subcollection for individual match records
+      match /matches/{matchId} {
+        allow read: if isValidId(tournamentId) && isValidId(matchId);
+        allow write: if isValidId(tournamentId) && isValidId(matchId);
+      }
+    }
+  }
+}

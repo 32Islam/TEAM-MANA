@@ -1,0 +1,8 @@
+{
+  "name": "PCOB API Version 1.2 Updated Theme",
+  "description": "Local PUBG spectator tools tournament manager and colorful OBS stream leaderboard with live spectator API capture, match persistence, and multi-game player kill tracking.p",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
