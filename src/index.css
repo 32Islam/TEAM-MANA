@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #0a0d14;
+  --bg-card: #121824;
+  --bg-card-hover: #172132;
+  --bg-surface: #182234;
+  --bg-input: #0f1622;
+
+  /* Borders */
+  --border-subtle: #1e293b;
+  --border-bright: #334155;
+  --border-accent: #38bdf8;
+
+  /* Typography Colors */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Accent & Telemetry Tints */
+  --gold: #ffb800;
+  --gold-bg: rgba(255, 184, 0, 0.15);
+  --gold-border: rgba(255, 184, 0, 0.40);
+
+  --silver: #cbd5e1;
+  --silver-bg: rgba(203, 213, 225, 0.15);
+
+  --bronze: #f97316;
+  --bronze-bg: rgba(249, 115, 22, 0.15);
+
+  --emerald: #10b981;
+  --emerald-bg: rgba(16, 185, 129, 0.12);
+  --emerald-border: rgba(16, 185, 129, 0.35);
+
+  --cyan: #38bdf8;
+  --cyan-bg: rgba(56, 189, 248, 0.12);
+  --cyan-border: rgba(56, 189, 248, 0.35);
+
+  --crimson: #ef4444;
+  --crimson-bg: rgba(239, 68, 68, 0.15);
+  --crimson-border: rgba(239, 68, 68, 0.35);
+
+  /* Shadows & Glows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow-gold: 0 0 25px rgba(255, 184, 0, 0.25);
+  --shadow-glow-cyan: 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+@theme {
+  --color-bg-primary: #0a0d14;
+  --color-bg-card: #121824;
+  --color-bg-card-hover: #172132;
+  --color-bg-surface: #182234;
+  --color-bg-input: #0f1622;
+  --color-border-subtle: #1e293b;
+  --color-border-bright: #334155;
+  --color-border-accent: #38bdf8;
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+  --color-gold: #ffb800;
+  --color-silver: #cbd5e1;
+  --color-bronze: #f97316;
+  --color-emerald: #10b981;
+  --color-cyan: #38bdf8;
+  --color-crimson: #ef4444;
+}
+
+/* Global scrollbar: 6px width with #2a374a rounded thumb on #0a0d14 track, turning #38bdf8 on hover */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0d14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a374a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: #2a374a #0a0d14;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  background-attachment: fixed;
+}
+
+/* OBS Alpha Transparency Support */
+html.obs-transparent,
+body.obs-transparent,
+html.obs-transparent body,
+#root.obs-transparent,
+.obs-transparent {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+/* Hide scrollbar utility for completely seamless OBS overlays */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+/* Typography Classes */
+.font-heading {
+  font-family: 'Barlow', 'Outfit', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-telemetry {
+  font-family: 'Rajdhani', monospace;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-barlow {
+  font-family: 'Barlow', 'Outfit', sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Esports Component Patterns */
+.cyber-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cyber-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-bright);
+}
+
+.broadcast-glass {
+  background: rgba(10, 15, 26, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Badges */
+.badge-live {
+  background-color: var(--emerald-bg);
+  border: 1px solid var(--emerald-border);
+  color: var(--emerald);
+}
+
+.badge-kills {
+  background-color: var(--cyan-bg);
+  border: 1px solid var(--cyan-border);
+  color: var(--cyan);
+}
+
+.badge-knocked {
+  background-color: var(--crimson-bg);
+  border: 1px solid var(--crimson-border);
+  color: var(--crimson);
+}
+
+.badge-gold {
+  background-color: var(--gold-bg);
+  border: 1px solid var(--gold-border);
+  color: var(--gold);
+}
+
+/* Podium Hierarchy Row Accents */
+.row-rank-1 {
+  border-left: 4px solid var(--gold) !important;
+}
+
+.row-rank-2 {
+  border-left: 4px solid var(--silver) !important;
+}
+
+.row-rank-3 {
+  border-left: 4px solid var(--bronze) !important;
+}
+
+.row-rank-top {
+  border-left: 4px solid var(--cyan) !important;
+}
+
+.row-rank-normal {
+  border-left: 4px solid var(--border-subtle) !important;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
